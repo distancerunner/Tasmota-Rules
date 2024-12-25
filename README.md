@@ -42,7 +42,8 @@ Rule1 "
 # Workaround to trigger values 2 second
 on system#boot do
    ruletimer1 2
-endon```
+endon
 on rules#timer=1 do
    backlog status 8;ruletimer1 2
 endon
+```
