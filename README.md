@@ -34,3 +34,14 @@ PulseTime 100 for 10 Sec
 >1..111 = set PulseTime for Relay<x> in 0.1 second increments
 
 >112..64900 = set PulseTime for Relay<x>, offset by 100, in 1 second increments. Add 100 to desired interval in seconds, e.g., PulseTime 113 = 13 seconds and PulseTime 460 = 6 minutes (i.e., 360 seconds)
+
+# Delete rules
+Rule1 "
+
+# Workaround to trigger values 2 second
+on system#boot do
+   ruletimer1 2
+endon
+on rules#timer=1 do
+   backlog status 8;ruletimer1 2
+endon
